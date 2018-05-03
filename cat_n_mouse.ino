@@ -56,12 +56,80 @@ void lineExample()
   }
 }
 
+void cat_n_mouse()
+{
+  for (int i = 0; i < random(oled.getLCDWidth()); i++)
+  {
+    /*
+    // Cat
+    int cat_x = random(oled.getLCDWidth());
+    int cat_y = random(oled.getLCDHeight());
+    int cat_head = 9;
+    int cat_left_ear_rad = 3;
+    int cat_right_ear_rad = 3;
+    //int cat_left_eye_rad = 4;
+    //int cat_right_eye_rad = 6;
+    //int cat_pupil_rad = 2;
+
+    // Head
+    oled.circle(cat_x, cat_y, cat_head);
+
+    // Left Ear
+    oled.circle(cat_x + 9, cat_y - 9, cat_left_ear_rad);
+
+    // Right Ear
+    oled.circle(cat_x - 9, cat_y - 9, cat_right_ear_rad);
+    
+    // Left Eye
+    //oled.circle(cat_x + 10, cat_y - 2, cat_left_eye_rad);
+    //oled.circleFill(cat_x + 10, cat_y - 2, cat_pupil_rad);
+    
+    // Right Eye
+    //oled.circle(cat_x, cat_y - 1, cat_right_eye_rad);
+    //oled.circleFill(cat_x, cat_y - 1, cat_pupil_rad);
+    */
+   
+    // Mouse
+    int mouse_x = random(oled.getLCDWidth());
+    int mouse_y = random(oled.getLCDHeight());
+    int mouse_head = 6;
+    int mouse_left_ear_rad = 4;
+    int mouse_right_ear_rad = 4;
+
+    // Head
+    oled.circle(mouse_x, mouse_y, mouse_head);
+
+    // Left Eye
+    //oled.pixel(mouse_x + 2, mouse_y - 1);
+
+    // Right Eye
+    //oled.pixel(mouse_x - 2, mouse_y - 1);
+
+    // Nose
+    oled.pixel(mouse_x, mouse_y + 2);
+
+    // Left Ear
+    oled.circle(mouse_x + 7, mouse_y - 7, mouse_left_ear_rad);
+
+    // Right Ear
+    oled.circle(mouse_x - 7, mouse_y - 7, mouse_right_ear_rad);
+
+    
+    oled.display();
+    delay(500);
+    oled.clear(PAGE);
+    delay(500);
+  }
+}
+
+
 void loop()
 {
-  Mouse.move(36, 0); //Start mouse moving
+  Mouse.move(9, 0); //Start mouse moving
   delay(36);
-  Mouse.move(-36, 0); //Move it back
-  lineExample();   // Then the line example function
+  Mouse.move(-9, 0); //Move it back
+  //lineExample();   // Then the line example function
+  cat_n_mouse();
 }
 
 // Center and print a small title
