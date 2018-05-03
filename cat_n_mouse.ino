@@ -29,33 +29,6 @@ void setup()
   pinMode(1, INPUT_PULLUP);
 }
 
-void lineExample()
-{
-  int middleX = oled.getLCDWidth() / 2;
-  int middleY = oled.getLCDHeight() / 2;
-  int xEnd, yEnd;
-  int lineWidth = min(middleX, middleY);
-
-  for (int deg = 0; deg < 360; deg += 10)
-  {
-    xEnd = lineWidth * cos(deg * PI / 180.0);
-    yEnd = lineWidth * sin(deg * PI / 180.0);
-
-    oled.line(middleX, middleY, middleX + xEnd, middleY + yEnd);
-    oled.display();
-    delay(1000);
-  }
-  for (int deg = 0; deg < 360; deg += 10)
-  {
-    xEnd = lineWidth * cos(deg * PI / 180.0);
-    yEnd = lineWidth * sin(deg * PI / 180.0);
-
-    oled.line(middleX, middleY, middleX + xEnd, middleY + yEnd, BLACK, NORM);
-    oled.display();
-    delay(10);
-  }
-}
-
 void cat_n_mouse()
 {
   for (int i = 0; i < random(oled.getLCDWidth()); i++)
