@@ -31,7 +31,7 @@ void setup()
 
 void cat_n_mouse()
 {
-  for (int i = 0; i < random(oled.getLCDWidth()); i++)
+  for (unsigned int i = 0; i < random(oled.getLCDWidth()); i++)
   {
     /*
     // Cat
